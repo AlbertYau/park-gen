@@ -31,9 +31,13 @@ controls.enableZoom = false;
 controls.enablePan = false;
 
 console.log(camera);
+console.log(controls);
 
-controls.minPolarAngle = 0; // radians
-controls.maxPolarAngle = Math.PI/2; // radians
+var worldY = controls.getWorldDirection().y * (Math.PI/180);
+console.log(controls.getWorldDirection());
+
+controls.minPolarAngle = worldY; // radians
+controls.maxPolarAngle = worldY; // radians
 
 controls.minAzimuthAngle = - Infinity; // radians
 controls.maxAzimuthAngle = Infinity; // radians
